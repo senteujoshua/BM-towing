@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Page Header & Introduction -->
+  <section class="header">
+    <h1>Buy & Sell Cars Easily with Our Marketplace</h1>
+    <p>Looking to sell your car or find your next ride? Browse through a wide selection of vehicles or list yours in just a few clicks.</p>
+    <div class="cta-buttons">
+      <a href="#car-listings" class="btn-primary">Browse Cars for Sale</a>
+      <a href="#list-your-car" class="btn-secondary">List Your Car</a>
+    </div>
+  </section>
+
+  <!-- Car Listings Section (For Buyers) -->
+  <section id="car-listings" class="car-listings">
+    <h2>Find Your Next Car</h2>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+   
+      <!-- Example single danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Price Range
+  </button>
+  <ul class="dropdown-menu">
+    <li>      
+      <label for="price-range" class="form-label">Select Price Range</label>
+      <input type="range" class="form-range" id="price-range" min="0" max="100000" step="1000" oninput="updatePriceValue(this.value)">
+      <span id="price-range-value">$0 - $100,000</span>
+    </li>
+    
+  </ul>
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Car Make
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Toyota</a></li>
+    <li><a class="dropdown-item" href="#">BMW</a></li>
+    <li><a class="dropdown-item" href="#">Audi</a></li>
+    <li><a class="dropdown-item" href="#">Mercedes</a></li>
+  </ul>
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Year
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Mileage
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Condition
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Any</a></li>
+    <li><a class="dropdown-item" href="#">New</a></li>
+    <li><a class="dropdown-item" href="#">Used</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Certified Pre-Owned</a></li>
+  </ul>
+</div>
+      
+
+      <label for="year">Year</label>
+      <input type="number" id="year" min="1900" max="2023" placeholder="Year">
+
+      <label for="mileage">Mileage</label>
+      <input type="number" id="mileage" placeholder="Mileage">
+
+      
+
+      <label for="sort-by">Sort By</label>
+      <select id="sort-by">
+        <option value="newest">Newest Listings</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="mileage-low">Mileage: Low to High</option>
+      </select>
+    </div>
+    <div class="car-grid">
+      <!-- Example Car Card -->
+      <div class="car-card">
+        <img src="car1.jpg" alt="Toyota Camry">
+        <h3>Toyota Camry 2020</h3>
+        <p>$18,000 | 30,000 miles</p>
+        <p>Location: New York, NY</p>
+        <a href="#" class="btn-primary">View Details</a>
+      </div>
+      <!-- Repeat for other cars -->
+    </div>
+  </section>
+
+  <!-- Listing Your Car Section (For Sellers) -->
+  <section id="list-your-car" class="list-your-car">
+    <h2>List Your Car in 3 Simple Steps</h2>
+    <form class="listing-form">
+      <fieldset>
+        <legend>Step 1: Car Details</legend>
+        <label for="car-make-model">Car Make & Model</label>
+        <input type="text" id="car-make-model" required>
+
+        <label for="year-manufacture">Year of Manufacture</label>
+        <input type="number" id="year-manufacture" min="1900" max="2023" required>
+
+        <label for="car-mileage">Mileage</label>
+        <input type="number" id="car-mileage" required>
+
+        <label for="car-condition">Condition</label>
+        <select id="car-condition" required>
+          <option value="New">New</option>
+          <option value="Used">Used</option>
+          <option value="Certified Pre-Owned">Certified Pre-Owned</option>
+        </select>
+
+        <label for="vin">VIN (Optional)</label>
+        <input type="text" id="vin">
+      </fieldset>
+
+      <fieldset>
+        <legend>Step 2: Upload Photos</legend>
+        <label for="car-photos">Upload high-quality images of your car from multiple angles.</label>
+        <input type="file" id="car-photos" multiple accept="image/*">
+      </fieldset>
+
+      <fieldset>
+        <legend>Step 3: Pricing & Contact Info</legend>
+        <label for="asking-price">Asking Price</label>
+        <input type="number" id="asking-price" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" required>
+
+        <label>Preferred Communication Method</label>
+        <div class="radio-group">
+          <label><input type="radio" name="communication" value="call" required> Call</label>
+          <label><input type="radio" name="communication" value="text"> Text</label>
+          <label><input type="radio" name="communication" value="email"> Email</label>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn-primary">List My Car</button>
+    </form>
+  </section>
+
+  <!-- Safety & Tips Section -->
+  <section class="safety-tips">
+    <h2>Tips for Safe Buying & Selling</h2>
+    <ul>
+      <li>Verify vehicle history</li>
+      <li>Meet in public places</li>
+      <li>Never share personal financial information online</li>
+      <li>Use trusted payment methods</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials/Success Stories Section -->
+  <section class="testimonials">
+    <h2>See How Others Found Their Perfect Ride!</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"I found my dream car at an amazing price. Highly recommend this platform!"</p>
+        <span>- John D.</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Selling my car was so easy. I got multiple offers within days!"</p>
+        <span>- Sarah L.</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
