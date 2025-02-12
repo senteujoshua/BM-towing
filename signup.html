@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../Styling/login.css">
+    <link rel="stylesheet" href="../Styling/signup.css">
+</head>
+<body>
+    <div class="logo">
+        <i class="bi bi-mastodon"></i>
+        <h2>todoist</h2>
+    </div>
+    <div class="container">
+        <!-- form -->
+        <div class="form-section">
+            <h1>Sign Up</h1>
+
+            <a href="#" class="btn-google">
+                <img src="../images/Untitled design.jpg" alt="">
+                <p>Continue with Google</p>
+            </a>
+            <a href="#" class="btn-google">
+                <i class="bi bi-facebook" id="fb"></i>
+                <p>Continue with Facebook</p>
+            </a>
+            <a href="#" class="btn-google">
+                <i class="bi bi-apple"></i>
+                <p>Continue with Apple</p>
+            </a>
+
+        <hr class="divider">
+
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="newUsername">Email:</label>
+                    <input type="text" id="newUsername" name="newUsername" placeholder="Enter your Email.." required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Enter a password" required>
+                </div>
+                <button type="submit">Sign Up</button>
+                <p id="signupMessage" class="success-message"></p>
+            </form>
+
+            <p>
+                By continuing with Google, Apple, or Email, you agree to Todoist's <br>
+                <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+            </p>
+    
+            <hr class="divider">
+            
+            
+            <p>Already have an account? <a href="login.html">Go to Login</a></p>
+        </div>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>
