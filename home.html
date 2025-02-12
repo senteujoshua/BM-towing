@@ -73,7 +73,7 @@
                   <p id="errorMessage" class="error-message"></p>
               </form>
               <p>
-                  <a href="reset-password.html" class="forgot-password-link">Forgot Password?</a>
+                <a href="#" id="forgotPassword" class="forgot-password-link">Forgot Password?</a>
               </p>
               <p>
                   By continuing with Google, Apple, or Email, you agree to Todoist's <br>
@@ -82,10 +82,80 @@
       
               <hr class="divider">
       
-              <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+              <p>Don't have an account? <a href="#" id="signup">Sign Up</a></p>
           </div>
     </div>
   </div>
+<!-- Reset Password Popup -->
+<div class="popup" id="popupResetPassword">
+  <div class="popup-content">
+      <span class="close">&times;</span>
+      <div class="form-section2">
+          <h1>Reset Password</h1>
+          <p>Please enter your email address to reset your password.</p>
+          <form id="resetPasswordForm">
+              <div class="form-group">
+                  <label for="email">Email Address:</label>
+                  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <button type="submit">Send Reset Link</button>
+          </form>
+          <p>
+              <a href="#" class="back-to-login">Back to Login</a>
+          </p>
+      </div>
+  </div>
+</div>
+
+  <!-- signup page -->
+        <div class="popup" id="popupsignup">
+          <div class="popup-content">
+            <span id="closeBtn" class="close">&times;</span>
+          <div class="form-section">
+              <h1>Sign Up</h1>
+  
+              <a href="#" class="btn-google">
+                <img src="images/Untitled design.jpg" alt="">
+                  <p>Continue with Google</p>
+              </a>
+              <a href="#" class="btn-google">
+                  <i class="bi bi-facebook" id="fb"></i>
+                  <p>Continue with Facebook</p>
+              </a>
+              <a href="#" class="btn-google">
+                  <i class="bi bi-apple"></i>
+                  <p>Continue with Apple</p>
+              </a>
+  
+          <hr class="divider">
+  
+              <form id="signupForm">
+                  <div class="form-group">
+                      <label for="newUsername">Email:</label>
+                      <input type="text" id="newUsername" name="newUsername" placeholder="Enter your Email.." required>
+                  </div>
+                  <div class="form-group">
+                      <label for="newPassword">Password:</label>
+                      <input type="password" id="newPassword" name="newPassword" placeholder="Enter a password" required>
+                  </div>
+                  <button type="submit">Sign Up</button>
+                  <p id="signupMessage" class="success-message"></p>
+              </form>
+  
+              <p>
+                  By continuing with Google, Apple, or Email, you agree to Todoist's <br>
+                  <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+              </p>
+      
+              <hr class="divider">
+              
+              
+              <p>Already have an account? <a href="#" id="goBackToLogin">Go to Login</a></p>
+          </div>
+          </div>
+        </div>
+        <p id="signupMessage" class="success-message"></p>
+
 
   <!-- Hero Section -->
   <div class="hero">
@@ -168,7 +238,7 @@
         <div class="service-boxes">
           <div class="service-box">
             <div class="overlay">
-              <button>Learn More</button>
+              <button id="service">Learn More</button>
             </div>
             <div class="img-contain">
               <img src="images/Towing-services-in-Nairobi-Kenya-1.png" class="rounded float-start" alt="Car towing">
@@ -180,7 +250,7 @@
           </div>
           <div class="service-box">
             <div class="overlay">
-              <button>Learn More</button>
+              <button id="service">Learn More</button>
             </div>
             <div class="img-contain">
               <img src="images/motortowing.jpg" class="rounded float-start" alt="Car towing">
@@ -192,7 +262,7 @@
           </div>
           <div class="service-box">
             <div class="overlay">
-              <button>Learn More</button>
+              <button id="service">Learn More</button>
             </div>
             <div class="img-contain">
               <img src="images/Jump-starting-car - Copy.avif" class="rounded float-start" alt="Car towing">
@@ -204,7 +274,7 @@
           </div>
           <div class="service-box">
             <div class="overlay">
-              <button>Learn More</button>
+              <button id="service">Learn More</button>
             </div>
             <div class="img-contain">
               <img src="images/autorepairandmaintenace.webp" class="rounded float-start" alt="Car towing">
@@ -216,7 +286,7 @@
           </div>
           <div class="service-box">
             <div class="overlay">
-              <button>Learn More</button>
+              <button id="service">Learn More</button>
             </div>
             <div class="img-contain">
               <img src="images/bandscars.jpg" class="rounded float-start" alt="Car towing">
@@ -228,7 +298,7 @@
           </div>
           <div class="service-box">
             <div class="overlay">
-              <button>Learn More</button>
+              <button id="service">Learn More</button>
             </div>
             <div class="img-contain">
               <img src="images/Roadside-assistance1.jpg" class="rounded float-start" alt="Car towing">
@@ -442,30 +512,124 @@
     document.getElementById("start").addEventListener("click",function(){
       window.location.href="contact.html";
     });
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
+
     var popup = document.getElementById("popupWindow");
     var openPopupBtn = document.getElementById("openPopUp");
     var closeBtn = document.getElementById("closeBtn");
 
+    var popupsign = document.getElementById("popupsignup");
+    var signupBtn = document.getElementById("signup");
+    var goBackToLoginBtn = document.getElementById("goBackToLogin");
+    
+    var closeBtns = document.querySelectorAll(".close");
+
+    var signupForm = document.getElementById("signupForm");
+    var signupMessage = document.getElementById("signupMessage");
+
     popup.style.display = "none";
-    // Open popup
-    openPopupBtn.addEventListener("click", function(event) {
-      event.preventDefault();
-      popup.style.display = "flex";
-    });
+    popupsign.style.display = "none";
 
-    // Close popup
-    closeBtn.addEventListener("click", function() {
-      popup.style.display = "none";
-    });
-
-    // Close popup when clicking outside of the content
-    window.addEventListener("click", function(event) {
-      if (event.target === popup) {
+    if (openPopupBtn) {
+        openPopupBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            popup.style.display = "flex";
+            popupsign.style.display = "none";
+        });
+    }
+    // Elements for Reset Password popup
+var popupReset = document.getElementById("popupResetPassword");
+var forgotPasswordBtn = document.getElementById("forgotPassword"); // Open reset password
+var goBackToLoginBtns = document.querySelectorAll(".back-to-login"); // Back to login
+var resetPasswordForm = document.getElementById("resetPasswordForm");
+var closeBtns = document.querySelectorAll(".close");
+// Open forgot password popup
+if (forgotPasswordBtn) {
+    forgotPasswordBtn.addEventListener("click", function (event) {
+        event.preventDefault();
         popup.style.display = "none";
-      }
+        popupsign.style.display = "none";
+        popupReset.style.display = "flex";
     });
-  });
+}
+
+// Switch back to login popup from reset password
+goBackToLoginBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (event) {
+        event.preventDefault();
+        popup.style.display = "flex";
+        popupsign.style.display = "none";
+        popupReset.style.display = "none";
+    });
+});
+
+// Handle password reset form submission
+if (resetPasswordForm) {
+    resetPasswordForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        alert("Password reset link has been sent to your email!");
+        popupReset.style.display = "none"; // Close popup after submitting
+        popup.style.display = "flex"; // Show login form again
+    });
+}
+
+    if (signupBtn) {
+        signupBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            popup.style.display = "none"; 
+            popupsign.style.display = "flex";
+        });
+    }
+    closeBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            popup.style.display = "none";
+            popupsign.style.display = "none";
+            popupReset.style.display = "none";
+        });
+    });
+
+    // Switch back to login form
+    if (goBackToLoginBtn) {
+        goBackToLoginBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            popupsign.style.display = "none"; // Hide signup
+            popup.style.display = "flex"; // Show login again
+        });
+    }
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+            popup.style.display = "none";
+            popupsign.style.display = "none";
+        });
+    }
+
+    window.addEventListener("click", function (event) {
+        if (event.target === popup || event.target === popupsign) {
+            popup.style.display = "none";
+            popupsign.style.display = "none";
+        }
+    });
+    if (signupForm) {
+        signupForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form from reloading the page
+
+            // Simulating successful signup
+            signupMessage.textContent = "Sign Up Successful!";
+            signupMessage.style.color = "green";
+            
+            // Redirect to dashboard after 2 seconds
+            setTimeout(function () {
+                window.location.href = "dashboard.html"; // Change this to your actual dashboard page
+            }, 2000);
+        });
+    }
+});
+
+  document.getElementById("service").addEventListener("click", function(){
+    window.location.href = "service.html"
+  })
+
 
   </script>
 
