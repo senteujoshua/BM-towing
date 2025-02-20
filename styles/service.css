@@ -1,18 +1,260 @@
 .hero{
-    height: 300px;
+    height: 580px;
+    background: linear-gradient(rgba(2, 50, 141, 0.4),rgba(1, 73, 206, 0.4)), url(../images/karsten-wurth-rafblRbne3o-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .content {
-    height: 100%;
-    padding: 20px 0 30px;
-    width: 900px;
-    text-align: center;
+    flex-basis: 38%;
+    text-align: left;
+    padding: 165px 0 5px
+}
+.content h1{
+    font-size: 3em;
 }
 .content p{
-    margin: 15px 30px 30px;
+    margin: 16px 0 29px;
     font-family: "Forum", serif;
     color: #f9f9f9;
-    font-size: 2em;
+    font-size: 1.6em;
 }
-.service-body{
-    background: rgba(144, 170, 221, 0.34);
+.content button{
+    background-color: #D70040;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.content button:hover{
+    background-color: #560d23;
+}
+.content-cta-wrap{
+    padding: 290px 0 5px;
+}
+.content-cta{
+    width: 400px;
+    height: 155px;
+    padding: 5px 40px;
+    background-color: #e8e5e5;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content-cta i{
+    padding: 25px 19.5px;
+    background: #D70040;
+    font-size: 2.5em;
+    color: #f9f9f9;
+}
+.words p{
+    color: #020245;
+}
+.words strong{
+    color: #02029d;
+    font-size: 1.5em;
+}
+.desc-wrapper{
+    padding: 10px 6.5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.description-content{
+    flex-basis: 55%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.desc-container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.words-desc{
+    width: 100%;
+}
+.words-desc h2{
+    margin: 15px 0 27px;
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #0d0d5f;
+    font-family: "Forum", serif;
+}
+
+.imgs-desc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.imgs-desc img{
+    width: 85%;
+    height: 235px;
+}
+
+.desc-content-pages{
+    padding: 50px 0;
+    flex-basis: 32%;
+    background-color: #cecdc9;
+    height: 620px;
+}
+.service-pages{
+    height: 100%;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.head{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 21px;
+}
+.head p{
+    flex-basis: 55%;
+    color: #b50137;
+    font-size: 19px;
+    font-weight: bold;
+}
+.hor-rule-this{
+    flex-basis: 50%;
+    height: 30px;
+    border-top: 2px solid #b50137;
+}
+.service-direct{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.service-direct ul{
+    list-style: none;
+}
+.service-direct ul li{
+    display: block;
+    margin: 10px 0;
+    height: 65px;
+    padding-left: 38px;
+    border-left:8.5px solid #b50137;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    transition: 0.7s ease;
+}
+
+.service-direct ul li:hover{
+    background-color: rgba(2, 2, 69, 0.4);
+}
+
+.service-direct ul li a{
+    text-decoration: none;
+    color: #0d0d5f;
+    font-size: 19px;
+}
+
+.accordion-wrapper{
+    height: 900px;
+    width: 100%;
+    background: url(../images/sincerely-media-FPrniQ84dEk-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.accord-wrap{
+    padding: 25px 0;
+    text-align:center;
+}
+.accord-wrap p{
+    margin-bottom: 40px;
+}
+.accord-wrap h2{
+    margin-bottom: 40px;
+}
+.accordion-cols{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.accordion-col{
+    width: 600px;
+    height: 680px;
+    padding: 50px 10px;
+    background-color: #c1d2e8;
+}
+.accordion{
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+    height: 90%; 
+    margin: 0;
+    padding: 0;
+}
+
+.accordion li{
+    flex: 1;
+    list-style: none;
+    padding: 3px 10px;
+    border-radius: 8px;
+    background:#e3edf7;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgba(255, 255,255, 0.7);
+}
+
+.accordion li label{
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+label::before{
+    content: '+';
+    margin-right: 10px;
+    font-size: 19px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    border: 1px solid #3b2739;
+    background-color: #3b2739;
+    color: #ffffff;
+    transition: transform 0.3s; 
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.accordion .content{
+    color: #555;
+    padding: 0 10px;
+    line-height: 19px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s;
+}
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 200px;
+}
+
+.accordion input[type="radio"]:checked + label::before{
+    content: '-';
+    transform: rotate(180deg);
 }
