@@ -1,5 +1,15 @@
+.container{
+    padding: 10px 5%;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
 .car-list{
-    height: 500px;
+    height: 90vh;
     background: url(../images/milad-fakurian-0ESYm5Akzl4-unsplash.jpg);
 }
 .car-list .navbar-brand{
@@ -9,4 +19,9 @@
 .car-list .btn{
     padding: 15px 43px;
     font-size: 1.2em;
+}
+.col-md-3{
+    border: 1px solid #022762;
+    padding: 15px 25px;
+
 }

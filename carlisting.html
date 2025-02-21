@@ -19,20 +19,24 @@
 <body>
     <div class="header">
         <div class="container">
-            <nav>
+            <div class="show-instead" id="show">
+                <i class="bi bi-list-nested menu-icon" id="menu"></i>
+                <p>Menu</p>
+            </div>
+            <nav id="nav-bar">
+                <div class="links-wrapper">
+                    <ul>
+                        <li><a class="nav-link active" aria-current="page" href="home.html">Home</a></li>
+                        <li><a class="nav-link" href="AboutUs.html">AboutUs</a></li>
+                        <li><a class="nav-link" href="service.html">Services</a></li>
+                        <li><a class="nav-link" href="carlisting.html">Car listing</a></li>
+                        <li><a class="nav-link" href="contact.html">ContactUs</a></li>
+                        <li><a class="nav-link" href="#"><i id="openPopUp" class="bi bi-person-fill"></i></a></li>
+                    </ul>
+                    </div>
                 <div class="logo">
                 <h1>B<span>M</span></h1>
                 <p>tow</p>
-                </div>
-                <div class="links-wrapper">
-                <ul>
-                    <li><a class="nav-link active" aria-current="page" href="home.html">Home</a></li>
-                    <li><a class="nav-link" href="AboutUs.html">AboutUs</a></li>
-                    <li><a class="nav-link" href="service.html">Services</a></li>
-                    <li><a class="nav-link" href="carlisting.html">Car listing</a></li>
-                    <li><a class="nav-link" href="contact.html">ContactUs</a></li>
-                    <li><a class="nav-link" href="#"><i id="openPopUp" class="bi bi-person-fill"></i></a></li>
-                </ul>
                 </div>
             </nav>
         </div>
@@ -64,7 +68,6 @@
 
     <div class="container mt-4">
         <div class="row">
-            <!-- Sidebar Filters -->
             <!-- Car Listings -->
             <div class="col-md-9">
                 <div class="d-flex justify-content-between mb-3">
@@ -197,5 +200,19 @@
           </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const menu = document.getElementById("menu")
+            const navbar = document.getElementById("nav-bar")
+            const show = document.getElementById("show")
+
+            menu.addEventListener('click', function(){
+                navbar.classList.toggle('active')
+            })
+            document.addEventListener('click', function(){
+                navbar.classList.remove('active')
+            })
+        })
+    </script>
 </body>
 </html>
