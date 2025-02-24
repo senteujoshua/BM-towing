@@ -301,13 +301,36 @@
         </div>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            const page_item = document.querySelector('.page-item')
-            page_item.classList.remove('active')
-            page_item.addEventListener('click', function(){
-                page_item.classList.add('active')
-            })
-        })
+        let currentPage = 1;
+const totalPages = 5;
+
+function changePage(page) {
+    if (page === currentPage) return;
+
+    // Remove active class from previous page
+    document.querySelector(".page-item.active").classList.remove("active");
+
+    // Add active class to the new page
+    const newActivePage = document.querySelectorAll(".page-item")[page - 1];
+    newActivePage.classList.add("active");
+
+    // Handle dots logic
+    const dots = document.querySelector(".dots");
+    if (page > 2) {
+        dots.classList.remove("hidden");
+    } else {
+        dots.classList.add("hidden");
+    }
+
+    currentPage = page;
+}
+
+function nextPage() {
+    if (currentPage < totalPages) {
+        changePage(currentPage + 1);
+    }
+}
+
     </script>
 </body>
 </html>
