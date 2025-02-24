@@ -218,16 +218,30 @@
 
     <div class="container">
         <div class="page-numbers">
-            <div class="pages">
-                <a href="carlisting.html"  class="active"><p> 1 </p></a>
-                <a href="list2.html"><p> 2 </p></a>
-                <a href="list3.html"><p> 3 </p></a>
-                <a href="list4.html"><p> 4 </p></a>
-                <a href="list5.html"><p> 5 </p></a>
-                <a href="#" id="cont"><p> <i class="bi bi-three-dots"></i> </p></a>
-                <a href="#" id="gotonext"><p> <i class="bi bi-chevron-right"></i> </p></a>
+                <ul class="pagination">
+                    <li class="page-item active" id="pageitem">
+                        <a class="page-link" href="carlisting.html">1</a>
+                    </li>
+                    <li class="page-item" id="pageitem">
+                        <a class="page-link" href="list2.html">2</a>
+                    </li>
+                    <li class="page-item" id="pageitem">
+                        <a class="page-link" href="list3.html">3</a>
+                    </li>
+                    <li class="page-item" id="pageitem">
+                        <a class="page-link" href="list4.html">4</a>
+                    </li>
+                    <li class="page-item" id="pageitem">
+                        <a class="page-link" href="list5.html">5</a>
+                    </li>
+                    <li class="page-item dots hidden">
+                        <a class="page-link">...</a>
+                    </li>
+                    <li class="page-item" onclick="nextPage()">
+                        <a class="page-link" href="#">&raquo;</a>
+                    </li>
+                </ul>
             </div>
-        </div>
     </div>
     <footer>
         <div class="container">
@@ -286,6 +300,14 @@
           </div>
         </div>
     </footer>
-    <script src="carlist.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            const page_item = document.querySelector('.page-item')
+            page_item.classList.remove('active')
+            page_item.addEventListener('click', function(){
+                page_item.classList.add('active')
+            })
+        })
+    </script>
 </body>
 </html>
