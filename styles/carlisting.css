@@ -109,6 +109,9 @@
     align-items: center;
     gap: 30px;
 }
+.car-price p del{
+    color: #606980;
+}
 .car-price button{
     margin-top: 40px;
     background-color: #0c38a7;
@@ -131,6 +134,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.pages a{
+    text-decoration: none;
 }
 .pages p{
     border: 1.5px solid #052b8a;
