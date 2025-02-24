@@ -1,5 +1,9 @@
 .hero{
     height: 350px;
+    background: linear-gradient(rgba(2, 50, 141, 0.4),rgba(1, 73, 206, 0.4)), url(../images/karsten-wurth-rafblRbne3o-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .content{
     width: 100%;
@@ -26,6 +30,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: 0.3s;
+}
+.car-list-box:hover{
+    transform: scale(1.01);
+    background-color: #ecf0f1;
+    border-bottom: 1px solid #2c5ede;
 }
 .car-img{
     flex-basis: 25%;
@@ -86,10 +96,15 @@
     font-weight: 540;
 }
 .car-icons{
-    width: 370px;
+    width: 290px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.car-icons p{
+    border-left: 1px solid #606980;
+    padding: 0 8px 0;
 }
 
 .car-icons p i{
