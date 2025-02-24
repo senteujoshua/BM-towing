@@ -8,8 +8,8 @@
 .content p{
     margin: 0;
 }
-.carlist{
-    padding: 3px 2%;
+.car-list{
+    padding: 4% 8%;
 }
 .carlist-boxes{
     width: 100%;
@@ -22,7 +22,7 @@
 .car-list-box{
     width: 100%;
     border: 1px solid #033ac6;
-    padding: 15px 30px;
+    padding: 21px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,7 +45,7 @@
     align-items: center;
 }
 .car-details{
-    flex-basis: 65%;
+    flex-basis: 60%;
     text-align: left;
 }
 .car-details p{
@@ -96,3 +96,51 @@
     color: #033ac6;
 }
 
+.car-price{
+    flex-basis: 35%;
+    height: 170px;
+    border-left: 1px solid #606980;
+    padding: 0 20px;
+    margin:auto 0;
+}
+.car-price p{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 30px;
+}
+.car-price button{
+    margin-top: 40px;
+    background-color: #0c38a7;
+    color: #f9f9f9;
+    border-radius: 3px;
+    font-family: "Forum", serif;
+    font-size: 1.1em;
+    transition: 0.56s;
+}
+.car-price button:hover{
+    background-color: #2c5ede;
+}
+
+.page-numbers{
+    width: 400px;
+    margin: auto;
+}
+.pages{
+    width:80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pages p{
+    border: 1.5px solid #052b8a;
+    color: #2c5ede;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-align: center;
+    transition: 0.5s;
+}
+.pages p:hover{
+    background-color: #0c38a7;
+    color: #f9f9f9;
+}
