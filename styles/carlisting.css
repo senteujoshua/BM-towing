@@ -8,3 +8,91 @@
 .content p{
     margin: 0;
 }
+.carlist{
+    padding: 3px 2%;
+}
+.carlist-boxes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+.car-list-box{
+    width: 100%;
+    border: 1px solid #033ac6;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.car-img{
+    flex-basis: 25%;
+    border-radius: 2px;
+    border: none;
+}
+.car-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.car-desc{
+    flex-basis: 68%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.car-details{
+    flex-basis: 65%;
+    text-align: left;
+}
+.car-details p{
+    color: #606980;
+    font-family: "Forum", serif;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.car-details h3{
+    font-family: "Roboto Condensed", serif;
+    font-size: 1.2em;
+    color: #0c38a7;
+}
+.admin{
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 14px 0;
+}
+.admin-img{
+    border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+.admin-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.car-details ul li{
+    color: #606980;
+    letter-spacing: 1.2px;
+    font-family: "Forum", serif;
+    font-size: 1.1em;
+    font-weight: 540;
+}
+.car-icons{
+    width: 370px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.car-icons p i{
+    color: #033ac6;
+}
+
