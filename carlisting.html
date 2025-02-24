@@ -19,11 +19,11 @@
 <body>
     <div class="header">
         <div class="container">
-            <div class="show-instead" id="show">
-                <i class="bi bi-list-nested menu-icon" id="menu"></i>
-                <p>Menu</p>
-            </div>
             <nav>
+                <div class="logo">
+                <h1>B<span>M</span></h1>
+                <p>tow</p>
+                </div>
                 <div class="links-wrapper" id="nav-bar">
                     <ul>
                         <li><a class="nav-link" aria-current="page" href="home.html">Home</a></li>
@@ -34,41 +34,53 @@
                         <li><a class="nav-link" href="#"><i id="openPopUp" class="bi bi-person-fill"></i></a></li>
                     </ul>
                     </div>
-                <div class="logo">
-                <h1>B<span>M</span></h1>
-                <p>tow</p>
-                </div>
             </nav>
+            </div>
         </div>
     </div>
-    <nav class="navbar navbar-light bg-light car-list">
+    <!-- hero section -->
+    <div class="hero">
         <div class="container">
-            <div class="col-md-3">
-                <h4>Filters</h4>
-                <label for="price-range">Price Range</label>
-                <input type="range" id="price-range" class="form-range" min="5000" max="100000" step="5000">
-                <span id="price-range-value">$5,000 - $100,000</span>
-                <h5 class="mt-3">Category</h5>
-                <ul class="list-group">
-                    <li class="list-group-item">SUV</li>
-                    <li class="list-group-item">Sedan</li>
-                    <li class="list-group-item">Hatchback</li>
-                    <li class="list-group-item">Truck</li>
-                </ul>
+            <div class="content">
+                <h1>Car List</h1>
+                <p>Lorem ipsum dolor sit amet.</p>
             </div>
-
-            <a href="#" class="btn btn-primary">List Your Car</a>
-                        
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search cars..." aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
         </div>
-    </nav>
-
-    <div class="container mt-4">
+    </div>
+    
+<!-- car listing grid -->
+    <div class="car-list">
+        <div class="container">
+            <div class="carlist-boxes">
+                <div class="car-list-box">
+                    <div class="car-img">
+                        <img src="images/hondacr-v.png" alt="honda">
+                    </div>
+                    <div class="car-details">
+                        <p>SUV</p>
+                        <h3>Tesla Model S</h3>
+                        <div class="admin">
+                            <div class="admin-img">
+                                <img src="images/download.jpeg" alt="">
+                            </div>
+                            <p>By Admin</p>
+                        </div>
+                        <ul>
+                            <li>100% authentic materials used</li>
+                            <li>High quality building items</li>
+                        </ul>
+                        <p><i class="bi bi-cash-coin"></i> 1,000</p>
+                        <p><i class="bi bi-speedometer2"></i> Automatic</p>
+                        <p><i class="bi bi-steering-wheel"> RWD</i>
+                        </p>
+                    </div>
+                    <div class="car-price"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container mt-4">
         <div class="row">
-            <!-- Car Listings -->
             <div class="col-md-9">
                 <div class="d-flex justify-content-between mb-3">
                     <h4>Car Listings</h4>
@@ -142,7 +154,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <footer>
         <div class="container">
           <div class="footer-content">
@@ -200,19 +212,5 @@
           </div>
         </div>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            const menu = document.getElementById("menu")
-            const navbar = document.getElementById("nav-bar")
-            const show = document.getElementById("show")
-
-            menu.addEventListener('click', function(){
-                navbar.classList.add('active')          
-            })
-            document.addEventListener('click', function(){
-                navbar.classList.remove('active')
-            })
-        })
-    </script>
 </body>
 </html>
