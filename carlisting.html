@@ -301,31 +301,31 @@
     </footer>
     <script>
         let currentPage = 1;
-const totalPages = 5;
 
-function changePage(page) {
-    if (page === currentPage) return;
-
-    // Remove active class from previous page
-    document.querySelector(".page-item.active").classList.remove("active");
-
-    // Add active class to the new page
-    const newActivePage = document.querySelectorAll(".page-item")[page - 1];
-    newActivePage.classList.add("active");
-
-    // Handle dots logic
+function changePage(pageNumber) {
+    const pages = document.querySelectorAll(".page-item");
     const dots = document.querySelector(".dots");
-    if (page > 2) {
-        dots.classList.remove("hidden");
+
+    // Remove active class from all pages
+    pages.forEach(page => page.classList.remove("active"));
+
+    // Add active class to the selected page
+    pages[pageNumber - 1].classList.add("active");
+
+    // Show dots if it's not page 1
+    if (pageNumber > 1) {
+        dots.style.display = "inline-block";
+        pages[pageNumber - 2].classList.add("dots"); // Convert previous page to dots
+        pages[pageNumber - 2].style.display = "none"; // Hide previous number
     } else {
-        dots.classList.add("hidden");
+        dots.style.display = "none"; // Hide dots when on first page
     }
 
-    currentPage = page;
+    currentPage = pageNumber;
 }
 
 function nextPage() {
-    if (currentPage < totalPages) {
+    if (currentPage < 5) {
         changePage(currentPage + 1);
     }
 }
